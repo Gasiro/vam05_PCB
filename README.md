@@ -19,7 +19,7 @@ This is a v4n layout ble pcb that works with ZMK
 
 
 # 固件
-如果你是直接从我这里购买的电路板，则固件已经提前刷好，但是，如果你想刷自己的固件，这当然也是可行的，但这不太必要，因为zmk的在线改建功能已经相当好用了，zmkstudio地址：
+如果你是直接从我这里购买的电路板，则固件已经提前刷好，但是，如果你想刷自己的固件，这当然也是可行的，但这不太必要，因为zmk的在线改建功能已经相当好用了，zmkstudio地址(使用zmkstudio的时候请使用有线连接方式)：https://zmk.studio/
 
 # 蓝牙连接指南
 层3(mo3)的1234数字键分别对应BT-Profile0、BT-Profile1、BT-Profile2、BT-Profile03，也就是说你可以连接4个设备（zmk允许5个，你可以编写固件并自己烧录，虽然我觉得4个对于大多数人来说已经足够）
