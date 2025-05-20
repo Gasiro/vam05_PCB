@@ -21,6 +21,17 @@ This is a v4n layout ble pcb that works with ZMK
 # 固件
 如果你是直接从我这里购买的电路板，则固件已经提前刷好，但是，如果你想刷自己的固件，这当然也是可行的，但这不太必要，因为zmk的在线改建功能已经相当好用了，zmkstudio地址(使用zmkstudio的时候请使用有线连接方式)：https://zmk.studio/
 
+如果你是自己通过开源文件进行构建的，那么，nrf52840芯片无法直接刷入utf文件，因为它需要一个初始的bootloader，这里是我fork并修改的符合vam05的初始bootloader：https://github.com/Gasiro/Adafruit_nRF52_Bootloader/actions/runs/14868433935/artifacts/3073119494
+
+对于nrf52840的第一次刷机，很简单，你需要拥有一个J-link(确保它能够刷nrf52系列芯片，因为一些仿制品实际上无法对nrf52系列刷机，并会损坏你的pcb，请务必和卖家沟通，如果你买的不是原版的J-link。)
+
+然后，vam05上预留了SWD接口，它使用TC2030-CTX-NL：https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf
+
+具体的初次刷固件非常简单：1.打开jflash，选择target_device为nrf52840_XXAA，target interface选择SWD 2.data_file选择我在前文中提供的 pca10100_bootloader-08ff459_s140_7.3.0.hex 文件 3.点击 'Erase Chip'，然后 'Program Device'，你的bootloader就刷好了。
+
+然后断开电路板和电脑的连接，再次插入电路板，这时你的桌面会有一个磁盘，将 vam05 的utf固件拖进去，就完成啦。
+
+
 # 蓝牙连接指南
 层3(mo3)的1234数字键分别对应BT-Profile0、BT-Profile1、BT-Profile2、BT-Profile03，也就是说你可以连接4个设备（zmk允许5个，你可以编写固件并自己烧录，虽然我觉得4个对于大多数人来说已经足够）
 
