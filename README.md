@@ -58,7 +58,10 @@ Use https://zmk.studio/ to modify keymaps in real time via USB connection.
 
 
 # Firmware
-If you purchased the PCB directly from me, it comes pre-flashed. However, you are free to flash your own firmware if needed. In most cases, the online configurator is sufficient.
+If you purchased the PCB directly from me, it comes pre-flashed. 
+[firmware.zip](https://github.com/user-attachments/files/20825480/firmware.zip)
+
+However, you are free to flash your own firmware if needed. In most cases, the online configurator is sufficient.
 
 If you're building the PCB from open-source files and using the nRF52840, note that this MCU needs a bootloader before it can flash .uf2 files. 
 
@@ -95,7 +98,7 @@ You’ll need a J-Link programmer (must support nRF52 — avoid some clones that
 
 Layer 3 (MO3) keys 1–4 map to BT Profiles 0–3 respectively, allowing connection to up to four devices (ZMK supports five, but most users will find four sufficient).
 
-## First-Time Pairing
+### First-Time Pairing
 
 Press the key for BT Profile 0 — LED2 turns lime to show it’s ready but unpaired.
 
