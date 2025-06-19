@@ -12,39 +12,39 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 # Features
 - **12 WS2812 RGB LEDs** form a circular underglow on the back of the board. The lighting is reasonably bright — especially with transparent cases like the _paw / vam05 PC version.
 
-- - When turned off via keymap control, the LEDs do not significantly drain battery life.
+  - When turned off via keymap control, the LEDs do not significantly drain battery life.
 
 - **Battery Power Switch**: Instead of completely cutting off power, it uses a clever circuit design that allows charging even when the switch is off.
 
 - **Simplified v4n Layout**:
 
-- - No split spacebar or encoder support (due to BLE MCU size constraints).
+  - No split spacebar or encoder support (due to BLE MCU size constraints).
 
-- - However, split-spacebar functionality can be simulated via ZMK: e.g., short press = space, long press = another key.
+  - However, split-spacebar functionality can be simulated via ZMK: e.g., short press = space, long press = another key.
 
 - **Three Pre-soldered Indicator LEDs** (same as other v4n variants):
 
 - **RGBLED1**:
 
-- - Red = Charging
+  - Red = Charging
 
-- - - Off = Fully charged
+    - Off = Fully charged
 
-- - On boot, it also shows battery status via green blinks:
+  - On boot, it also shows battery status via green blinks:
 
-- - - 80%: 2 blinks
+    - 80%: 2 blinks
 
-- - - <20%: 5 blinks
+    - <20%: 5 blinks
 
-- - - <5%: 10 blinks
+    - <5%: 10 blinks
 
 - **RGBLED2**: Layer indicator —
 
-- - Lime = Layer 1
+  - Lime = Layer 1
 
-- - Magenta = Layer 2
+  - Magenta = Layer 2
 
-- - Cyan = Layer 3
+  - Cyan = Layer 3
 
 - **DUALLED**: Caps Lock indicator
 
@@ -73,22 +73,22 @@ You’ll need a J-Link programmer (must support nRF52 — avoid some clones that
 
 - The SWD interface on vam05 uses the TC2030-CTX-NL connector:
 
-- - https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf
+  - https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf
 
 # Steps:
-1.Open J-Flash
+1. Open J-Flash
 
-2.Set target device to nrf52840_XXAA
+2. Set target device to nrf52840_XXAA
 
-3.Set interface to SWD
+3. Set interface to SWD
 
-4.Load the pca10100_bootloader-08ff459_s140_7.3.0.hex file (linked above)
+4. Load the pca10100_bootloader-08ff459_s140_7.3.0.hex file (linked above)
 
-5.Click “Erase Chip”
+5. Click “Erase Chip”
 
-6.Click “Program Device”
+6. Click “Program Device”
 
-7.Once flashed, disconnect the board and plug it back in. A USB drive will appear — drag and drop your .uf2 firmware into it, and you're done!
+7. Once flashed, disconnect the board and plug it back in. A USB drive will appear — drag and drop your .uf2 firmware into it, and you're done!
 
 
 # Bluetooth Connection Guide
