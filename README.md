@@ -1,64 +1,120 @@
 # vam05_PCB
-This is a v4n layout ble pcb that works with ZMK
+This is an BLE PCB designed for the v4n layout and is compatible with ZMK firmware.
 
-这是一个开源的 v4n pcb，这个布局来自trashman最初期的v4n配列设计v4n4g0n，并结合了之后开发的多个开源版本的v4n pcb的功能，如ws2812底灯。
+The vam05 is based on trashman’s original v4n layout design, v4n4g0n, and integrates features from several later open-source variants of the v4n PCB — including underglow lighting using WS2812 LEDs.
 ![Vam05PCB](https://github.com/user-attachments/assets/8a4b442b-c036-486b-8f3a-a88d296e4ab0)
 
-vam05 设计的初衷旨在将v4n配列变为一个轻便的可携带版本 -- 为了避免有线版本在经常插拔USBc接口时，有可能的静电会击穿并损坏键盘，因此设计了ble版本（当然，无论如何，都推荐您使用合规的usbc线，而不是手工焊接的客制化数据线，因为客制化数据线大多数屏蔽层未接地很有可能导致pcb的损坏）
+# Design Purpose
+The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/unplugging of USB-C cables on wired versions risks static discharge damage to the PCB. To mitigate this, the vam05 was designed with BLE support.
 
-此版本拥有相当漂亮的底光，12颗彩色ws2812形成了一个圆圈，排列在pcb的背面。他们的亮度中等，但我认为已经相当亮，假设如果你使用的是 _paw / vam05 的透明pc版本外壳。当你关闭底光的时候（这在keymap中是有的），ws2812并不会大量耗电以抽干电池，所以请勿担心。
+⚠️ Regardless of version, always use properly shielded USB-C cables. Avoid handmade/custom USB cables that may lack grounding — these can easily damage your PCB.
 
-这个版本还拥有一个电池开关，但它并不会把电池的电路完全切段，而是采用了巧妙的设计，得以使你在关闭电池开关的时候，仍可充电。
+# Features
+- **12 WS2812 RGB LEDs** form a circular underglow on the back of the board. The lighting is reasonably bright — especially with transparent cases like the _paw / vam05 PC version.
 
-这个版本拥有最简化的v4n配列，它没有分裂空格和编码器（因为无线mcu的尺寸相当大，导致无法采用分裂空格，但是，分裂空格的功能是可以通过zmk固件层面实现的，即短按空格键为空格键，长按空格键则是另一个键）
+- - When turned off via keymap control, the LEDs do not significantly drain battery life.
 
-此版本拥有3个预先焊接的指示灯（这同现有的三个版本的v4n相同），但是，请注意，这三个指示灯中，前两个指示灯（RGBLED1和RGBLED2）是3色rgb指示灯，最后一个是双色指示灯（Dualled），它们的功能分别是：
+- **Battery Power Switch**: Instead of completely cutting off power, it uses a clever circuit design that allows charging even when the switch is off.
 
-1.第一个指示灯在充电时会亮红灯，大约充满电后红灯灭；同时，第一个指示灯还兼顾电池电量检测，在每次开机的时候，都会闪烁绿灯提示电量：电量高于80%会闪烁2次，低于20%会闪烁5次，低于5%会闪烁10次（其他区间不会闪烁，如20%～80%之间时）
+- **Simplified v4n Layout**:
 
-2.第二个指示灯会显示 黄绿/品红/天蓝色，分别对应 黄绿-层1/品红-层2/天蓝色-层3
+- - No split spacebar or encoder support (due to BLE MCU size constraints).
 
-3.第三个指示灯是capslock指示灯
+- - However, split-spacebar functionality can be simulated via ZMK: e.g., short press = space, long press = another key.
 
-# 关于 Capslock 灯
-💡 注意：capslock灯的激活方式不同于层灯是实时的。它依赖电脑的状态反馈，如果你发现capslock灯偶尔不亮，可以稍微按慢一点，给电脑一点时间来切换状态。
+- **Three Pre-soldered Indicator LEDs** (same as other v4n variants):
 
-# keymap
-在 https://zmk.studio/ 网页版通过usb连接进行键位的实时修改
+- **RGBLED1**:
+
+- - Red = Charging
+
+- - - Off = Fully charged
+
+- - On boot, it also shows battery status via green blinks:
+
+- - - 80%: 2 blinks
+
+- - - <20%: 5 blinks
+
+- - - <5%: 10 blinks
+
+- **RGBLED2**: Layer indicator —
+
+- - Lime = Layer 1
+
+- - Magenta = Layer 2
+
+- - Cyan = Layer 3
+
+- **DUALLED**: Caps Lock indicator
+
+# Note on Caps Lock LED
+💡 Unlike layer indicators, Caps Lock feedback is OS-dependent. If it doesn’t light up occasionally, try pressing the key more slowly to give the system time to respond.
+
+
+# Keymap Editing
+Use https://zmk.studio/ to modify keymaps in real time via USB connection.
 ![keymap](https://github.com/user-attachments/assets/7d019430-5735-4961-abc1-3cefaf85caa3)
 
 
+# Firmware
+If you purchased the PCB directly from me, it comes pre-flashed. However, you are free to flash your own firmware if needed. In most cases, the online configurator is sufficient.
 
-# 固件
-如果你是直接从我这里购买的电路板，则固件已经提前刷好，但是，如果你想刷自己的固件，这当然也是可行的，但这不太必要，因为zmk的在线改建功能已经相当好用了，zmkstudio地址(使用zmkstudio的时候请使用有线连接方式)：https://zmk.studio/
+If you're building the PCB from open-source files and using the nRF52840, note that this MCU needs a bootloader before it can flash .uf2 files. 
 
-如果你是自己通过开源文件进行构建的，那么，nrf52840芯片无法直接刷入utf文件，因为它需要一个初始的bootloader，这里是我fork并修改的符合vam05的初始bootloader：https://github.com/Gasiro/Adafruit_nRF52_Bootloader/actions/runs/14868433935/artifacts/3073119494
+Here is a modified bootloader suited for vam05:
 
-对于nrf52840的第一次刷机，很简单，你需要拥有一个J-link(确保它能够刷nrf52系列芯片，因为一些仿制品实际上无法对nrf52系列刷机，并会损坏你的pcb，请务必和卖家沟通，如果你买的不是原版的J-link。)
-
-然后，vam05上预留了SWD接口，它使用TC2030-CTX-NL：https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf
-
-具体的初次刷固件非常简单：1.打开jflash，选择target_device为nrf52840_XXAA，target interface选择SWD 2.data_file选择我在前文中提供的 pca10100_bootloader-08ff459_s140_7.3.0.hex 文件 3.点击 'Erase Chip'，然后 'Program Device'，你的bootloader就刷好了。
-
-然后断开电路板和电脑的连接，再次插入电路板，这时你的桌面会有一个磁盘，将 vam05 的utf固件拖进去，就完成啦。
+👉 [Bootloader Download](https://github.com/Gasiro/Adafruit_nRF52_Bootloader/actions/runs/14868433935/artifacts/3073119494)
 
 
-# 蓝牙连接指南
-层3(mo3)的1234数字键分别对应BT-Profile0、BT-Profile1、BT-Profile2、BT-Profile03，也就是说你可以连接4个设备（zmk允许5个，你可以编写固件并自己烧录，虽然我觉得4个对于大多数人来说已经足够）
+# Flashing for the First Time
 
-在第一次连接的时候，按下BT-Profile0键，灯2就会变成黄绿色(当你选中一个profile时，灯2会暂时转变为蓝牙连接状态指示，黄绿表示尚未给这个停车位指定任何设备，红色表示已经指定了，但这个位置想要的设备现在不在线哦。而蓝色则表示：哟！你连接成功了)
+You’ll need a J-Link programmer (must support nRF52 — avoid some clones that cannot flash nRF chips and might damage your board).
 
-这时在你的设备1(比如电脑)上点击匹配，然后匹配成功之后，就会变成蓝色连接状态。
+- The SWD interface on vam05 uses the TC2030-CTX-NL connector:
 
-这时我会建议你再连接一个BT-Profile1，以熟悉zmk的连接方式：
+- - https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf
 
-当你连接好设备1之后，如果你想再配对一个设备2，不要点击任何BT_CLR，或者BT_CLR_ALL键，而是直接点击BT-Profile1(也就是层3的数字2键)，然后打开你的设备2(比如手机)，并匹配蓝牙。
+# Steps:
+1.Open J-Flash
 
-这时，恭喜你，你已经完成两个设备的连接了。你可以在按下BT-Profile0和BT-Profile1之间随意切换你的设备。
+2.Set target device to nrf52840_XXAA
 
-这4个profile位是假设你有一个停车场，上面有4个空车位，刚才你做的，是先把第一辆车停了进来，然后又停进来了第二辆车。而BT_CLR做的，则是在你选中的停车位中，清空某一个停车位，比如你站在停车位1中，点击BT_CLR，你就把停车位1清空了。
+3.Set interface to SWD
 
-而BT_CLR_ALL则是清空全部的停车位。
+4.Load the pca10100_bootloader-08ff459_s140_7.3.0.hex file (linked above)
+
+5.Click “Erase Chip”
+
+6.Click “Program Device”
+
+7.Once flashed, disconnect the board and plug it back in. A USB drive will appear — drag and drop your .uf2 firmware into it, and you're done!
+
+
+# Bluetooth Connection Guide
+
+Layer 3 (MO3) keys 1–4 map to BT Profiles 0–3 respectively, allowing connection to up to four devices (ZMK supports five, but most users will find four sufficient).
+
+## First-Time Pairing
+
+Press the key for BT Profile 0 — LED2 turns lime to show it’s ready but unpaired.
+
+- Red = Profile paired, device not currently connected
+
+- Blue = Connection successful
+
+Now, pair with your first device (e.g. PC). Once connected, LED2 turns blue.
+Next, try pairing BT Profile 1 (key 2 on Layer 3) with your second device (e.g. phone) the same way — don’t press BT_CLR between pairings.
+
+Now you can switch freely between the two devices using their profile keys.
+
+Think of the 4 BT profiles as parking spaces:
+
+- You just parked your first and second cars.
+
+- Pressing BT_CLR while in a profile clears that space.
+
+- Pressing BT_CLR_ALL clears all paired devices.
 
 
 
