@@ -2,7 +2,7 @@
 This is an BLE PCB designed for the v4n layout and is compatible with ZMK firmware.
 
 The vam05 is based on trashman’s original v4n layout design, v4n4g0n, and integrates features from several later open-source variants of the v4n PCB — including underglow lighting using WS2812 LEDs.
-![Vam05PCBFont](https://github.com/user-attachments/assets/8d50782e-44c6-4f74-af52-f6f4225da4a2)
+![Vam05PCBFront](https://github.com/user-attachments/assets/7c10bdcd-64a6-40ac-a1de-a828d1bf4bd3)
 ![Vam05PCBBack](https://github.com/user-attachments/assets/776ec8a7-192a-40b2-8d78-594aae91401b)
 
 # Design Purpose
