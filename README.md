@@ -2,7 +2,8 @@
 This is an BLE PCB designed for the v4n layout and is compatible with ZMK firmware.
 
 The vam05 is based on trashman’s original v4n layout design, v4n4g0n, and integrates features from several later open-source variants of the v4n PCB — including underglow lighting using WS2812 LEDs.
-![Vam05PCB](https://github.com/user-attachments/assets/8a4b442b-c036-486b-8f3a-a88d296e4ab0)
+![Vam05PCBFont](https://github.com/user-attachments/assets/8d50782e-44c6-4f74-af52-f6f4225da4a2)
+![Vam05PCBBack](https://github.com/user-attachments/assets/776ec8a7-192a-40b2-8d78-594aae91401b)
 
 # Design Purpose
 The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/unplugging of USB-C cables on wired versions risks static discharge damage to the PCB. To mitigate this, the vam05 was designed with BLE support.
@@ -24,7 +25,7 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 
 - **Three Pre-soldered Indicator LEDs** (same as other v4n variants):
 
-- **RGBLED1**:
+- **Indicator1**:
 
   - Red = Charging
 
@@ -38,7 +39,7 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 
     - <5%: 10 blinks
 
-- **RGBLED2**:
+- **Indicator2**:
   - Layer indicator
 
     - Lime = Layer 1
@@ -53,7 +54,7 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 
     - Blue = bluetooth connected
 
-- **DUALLED**: Caps Lock indicator
+- **Indicator3**: Caps Lock indicator
 
 ### Note on Caps Lock LED
 💡 Unlike layer indicators, Caps Lock feedback is OS-dependent. If it doesn’t light up occasionally, try pressing the key more slowly to give the system time to respond.
