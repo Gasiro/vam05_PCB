@@ -38,17 +38,24 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 
     - <5%: 10 blinks
 
-- **RGBLED2**: Layer indicator —
+- **RGBLED2**:
+  - Layer indicator
 
-  - Lime = Layer 1
+    - Lime = Layer 1
 
-  - Magenta = Layer 2
+    - Magenta = Layer 2
 
-  - Cyan = Layer 3
+    - Cyan = Layer 3
+      
+  - Bluetooth connection indicator
+
+    - Red = not connected to any profile
+
+    - Blue = bluetooth connected
 
 - **DUALLED**: Caps Lock indicator
 
-# Note on Caps Lock LED
+### Note on Caps Lock LED
 💡 Unlike layer indicators, Caps Lock feedback is OS-dependent. If it doesn’t light up occasionally, try pressing the key more slowly to give the system time to respond.
 
 
@@ -60,6 +67,11 @@ Use https://zmk.studio/ to modify keymaps in real time via USB connection.
 # Firmware
 If you purchased the PCB directly from me, it comes pre-flashed. 
 [firmware.zip](https://github.com/user-attachments/files/20825480/firmware.zip)
+
+
+There is a reset button next to the SWD footprint on the back of the PCB. Pressing it once will reset the board. Double-clicking it quickly within 500ms will enter .uf2 bootloader mode. In this mode, a disk named nrf52boot will appear on your computer. Simply drag and drop the .uf2 file (the .uf2 file in firmware.zip) into the disk to flash the firmware.
+
+During flashing, the green indicator1 LED will stay on. (If the battery is charging at the same time, the green LED will combine with the red charging LED and appear yellow.)
 
 However, you are free to flash your own firmware if needed. In most cases, the online configurator is sufficient.
 
