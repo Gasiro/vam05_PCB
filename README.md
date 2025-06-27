@@ -77,7 +77,7 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 
 - To enable normal Caps Lock behavior, go to:
 
-- **Settings → General → Keyboard → Hardware Keyboard, and turn off '_Caps Lock to switch language_'.**
+  **Settings → General → Keyboard → Hardware Keyboard, and turn off '_Caps Lock to switch language_'.**
 
 # Keymap Editing
 Use https://zmk.studio/ to modify keymaps in real time via USB connection.
