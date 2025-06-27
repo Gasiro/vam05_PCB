@@ -69,9 +69,16 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 - **Indicator3**: Caps Lock indicator
 
 ### Note on Caps Lock LED
-💡 Unlike layer indicators, Caps Lock feedback depends on how the operating system handles the key press.
+💡 1. Unlike layer indicators, Caps Lock feedback depends on how the operating system handles the key press.
+
 Some systems (**like macOS**) may ignore very quick taps and require the key to be held for around **200 ms** to register properly.
 If the indicator doesn't light up, try pressing and holding the key slightly longer.
+
+2. On **iPad/iPhone**, CapsLock may not work as expected because it's used to switch input languages by default.
+
+To enable normal Caps Lock behavior, go to:
+
+**Settings → General → Keyboard → Hardware Keyboard, and turn off '_Caps Lock to switch language_'.**
 
 # Keymap Editing
 Use https://zmk.studio/ to modify keymaps in real time via USB connection.
