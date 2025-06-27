@@ -75,7 +75,7 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 
 2. On **iPad/iPhone**, CapsLock may not work as expected because it's used to switch input languages by default.
 
-- To enable normal Caps Lock behavior, go to:
+- To enable CapsLock indicator on iPhone/iPad, first connect vam05 to your iPhone/iPad, then navigate to:
 
   **Settings** → **General** → **Keyboard** → **Hardware Keyboard**, and turn off '_**Caps Lock to switch language**_'.
 
