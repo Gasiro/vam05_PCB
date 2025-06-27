@@ -6,9 +6,12 @@ The vam05 is based on trashman’s original v4n layout design, v4n4g0n, and inte
 ![Vam05PCBBack](https://github.com/user-attachments/assets/776ec8a7-192a-40b2-8d78-594aae91401b)
 
 ## Install / Uninstall the HAC-006 battery
+⬇ Watch the video
 [![Install the battery](https://img.youtube.com/vi/nf2Lfo7mWOo/0.jpg)](https://www.youtube.com/watch?v=nf2Lfo7mWOo)
 
-⚠️ ⬇️ When removing the battery, do not pull it off directly, as this may damage the EZM connector. Instead, use a thin plastic pry tool to gently lift the battery from the EZM end. (Such a tool is usually included with the HAC-006 battery.)
+⚠️ ⬇ **When removing the battery, do not pull it off directly, as this may damage the EZM connector. Instead, use a thin plastic pry tool to gently lift the battery from the EZM end.** (Such a tool is usually included with the HAC-006 battery.)
+
+⬇ Watch the video
 
 [![Uninstall the battery](https://img.youtube.com/vi/oJaKfc10HQI/0.jpg)](https://www.youtube.com/watch?v=oJaKfc10HQI)
 
