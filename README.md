@@ -128,6 +128,7 @@ Think of the 4 BT profiles as parking spaces:
 - Pressing BT_CLR_ALL clears all paired devices.
 
 
+---
 # The following steps are necessary if you ordered your PCBs from JLC or other PCB manufacturers as bare boards.
 
 ## Flashing for the First Time
