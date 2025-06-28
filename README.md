@@ -93,7 +93,7 @@ There is a reset button next to the SWD footprint on the back of the PCB. Pressi
 
 During flashing, the green indicator1 LED will stay on. (If the battery is charging at the same time, the green LED will combine with the red charging LED and appear yellow.)
 
-However, you are free to flash your own firmware if needed. In most cases, the online configurator is sufficient.
+However, you are free to flash your own firmware if needed. In most cases, the firmware provided above is sufficient.
 
 If you're building the PCB from open-source files and using the nRF52840, note that this MCU needs a bootloader before it can flash .uf2 files. 
 
