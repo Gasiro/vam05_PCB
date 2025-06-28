@@ -5,7 +5,7 @@ The vam05 is based on trashman’s original v4n layout design, v4n4g0n, and inte
 ![Vam05PCBFront](https://github.com/user-attachments/assets/7c10bdcd-64a6-40ac-a1de-a828d1bf4bd3)
 ![Vam05PCBBack](https://github.com/user-attachments/assets/776ec8a7-192a-40b2-8d78-594aae91401b)
 
-## Install / Uninstall the HAC-006 battery
+### Install / Uninstall the HAC-006 battery
 ⬇ Watch the video (installing the battery)
 
 [![Install the battery](https://img.youtube.com/vi/nf2Lfo7mWOo/0.jpg)](https://www.youtube.com/watch?v=nf2Lfo7mWOo)
@@ -102,30 +102,6 @@ Here is a modified bootloader suited for vam05:
 👉 [Bootloader Download](https://github.com/Gasiro/Adafruit_nRF52_Bootloader/actions/runs/14868433935/artifacts/3073119494)
 
 
-# Flashing for the First Time
-
-You’ll need a J-Link programmer (must support nRF52 — avoid some clones that cannot flash nRF chips and might damage your board).
-
-- The SWD interface on vam05 uses the TC2030-CTX-NL connector:
-
-  - https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf
-
-# Steps:
-1. Open J-Flash
-
-2. Set target device to nrf52840_XXAA
-
-3. Set interface to SWD
-
-4. Load the pca10100_bootloader-08ff459_s140_7.3.0.hex file (linked above)
-
-5. Click “Erase Chip”
-
-6. Click “Program Device”
-
-7. Once flashed, disconnect the board and plug it back in. A USB drive will appear — drag and drop your .uf2 firmware into it, and you're done!
-
-
 # Bluetooth Connection Guide
 
 Layer 3 (MO3) keys 1–4 map to BT Profiles 0–3 respectively, allowing connection to up to four devices (ZMK supports five, but most users will find four sufficient).
@@ -150,6 +126,33 @@ Think of the 4 BT profiles as parking spaces:
 - Pressing BT_CLR while in a profile clears that space.
 
 - Pressing BT_CLR_ALL clears all paired devices.
+
+
+# The following steps are necessary if you ordered your PCBs from JLC or other PCB manufacturers as bare boards.
+
+## Flashing for the First Time
+
+You’ll need a J-Link programmer (must support nRF52 — avoid some clones that cannot flash nRF chips and might damage your board).
+
+- The SWD interface on vam05 uses the TC2030-CTX-NL connector:
+
+  - https://www.tag-connect.com/wp-content/uploads/bsk-pdf-manager/TC2030-CTX_1.pdf
+
+### Steps:
+1. Open J-Flash
+
+2. Set target device to nrf52840_XXAA
+
+3. Set interface to SWD
+
+4. Load the pca10100_bootloader-08ff459_s140_7.3.0.hex file (linked above)
+
+5. Click “Erase Chip”
+
+6. Click “Program Device”
+
+7. Once flashed, disconnect the board and plug it back in. A USB drive will appear — drag and drop your .uf2 firmware into it, and you're done!
+
 
 
 
