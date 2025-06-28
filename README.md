@@ -130,9 +130,8 @@ Think of the 4 BT profiles as parking spaces:
 
 ---
 ---
-# The following steps are necessary if you ordered your PCBs from JLC or other PCB manufacturers as bare boards.
-
-## Flashing for the First Time
+## The following steps are only necessary if you ordered your PCBs from JLC or other PCB manufacturers as bare boards.
+### Flashing for the First Time
 
 You’ll need a J-Link programmer (must support nRF52 — avoid some clones that cannot flash nRF chips and might damage your board).
 
