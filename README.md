@@ -81,7 +81,7 @@ The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/u
 
 # Keymap Editing
 Use https://zmk.studio/ to modify keymaps in real time via USB connection.
-<img width="1132" height="1978" alt="keymap" src="https://github.com/user-attachments/assets/fbe72f67-b67a-4999-b1b9-bfbe8721970c" />
+<img width="1132" height="1978" alt="keymap1" src="https://github.com/user-attachments/assets/a00065b9-266d-4230-9ba8-cbbe6f221a2c" />
 
 
 # Firmware
