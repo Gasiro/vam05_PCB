@@ -127,6 +127,31 @@ Think of the 4 BT profiles as parking spaces:
 
 - Pressing BT_CLR_ALL clears all paired devices.
 
+# Troubleshooting
+
+If the Bluetooth connection drops, try the following steps in order:
+
+-  **Test Wired Mode**: Connect via USB to confirm the keyboard works, ruling out hardware issues.
+ 
+-  **Power Reset**:
+
+   - Switch to **MO2 layer** (LED indicator = magenta).
+
+   - Press the **System Reset key** (second row, top-right corner, labeled *Delete*).
+
+   - Turn off the keyboard’s power switch, then turn it back on.
+
+-  **Restart Computer & Bluetooth**: Disable Bluetooth on your computer, restart the computer, then re-enable Bluetooth.
+
+-  **Clear Pairings**:
+
+   - On the **MO2 layer**, press the **first key on the third row** (from the left, labeled *Tab*) to clear all Bluetooth pairings from the keyboard.
+
+   - Remove the `vam05` device from your computer’s Bluetooth list.
+
+   - Re-pair the keyboard.
+
+-  **Re-flash Firmware**: If the above steps fail, re-flash the firmware.  
 
 ---
 ---
