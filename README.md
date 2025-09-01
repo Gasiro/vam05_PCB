@@ -16,6 +16,8 @@ The vam05 is based on trashman’s original v4n layout design, v4n4g0n, and inte
 
 [![Uninstall the battery](https://img.youtube.com/vi/oJaKfc10HQI/0.jpg)](https://www.youtube.com/watch?v=oJaKfc10HQI)
 
+# Plate file
+[Plate file](https://github.com/Gasiro/vam05_PCB/releases/download/plate/vam05_plate.dxf) for vam05 case
 
 # Design Purpose
 The vam05 aims to make the v4n layout portable and wireless. Frequent plugging/unplugging of USB-C cables on wired versions risks static discharge damage to the PCB. To mitigate this, the vam05 was designed with BLE support.
