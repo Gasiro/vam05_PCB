@@ -18,7 +18,8 @@ The vam05 is based on trashman’s original v4n layout design, v4n4g0n, and inte
 
 # Plate file
 [Plate file](https://github.com/Gasiro/vam05_PCB/releases/download/plate/vam05_plate.dxf) for vam05 case
-**Note**:
+
+### **Note**:
 If you are using [monorail](https://github.com/KiserDesigns/Monorail) or other V4N board that the indicators are dumb indicators, please enlarge the indicator drill holes to fit the hand-soldered version of the PCB. If your indicators are SMD LEDs like those on [Memoria](https://github.com/shinkaimayano/Memoria), then no modification to the hole size is needed.
 <img width="890" height="387" alt="plate" src="https://github.com/user-attachments/assets/df33c16a-77f6-4684-8dd5-063b204fda16" />
 
